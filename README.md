@@ -1,2 +1,2 @@
 # BookShelf
-AWSを使った書庫管理
+Amazon Product Advertising APIを使った書庫管理
