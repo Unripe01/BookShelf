@@ -13,7 +13,7 @@
     <h1>書籍一覧</h1>
     <div><p>メニュー</p>
         <asp:HyperLink ID="HyperLinkSearch" runat="server">検索</asp:HyperLink>
-        <%--<asp:HyperLink ID="HyperLinkRegist" runat="server" NavigateUrl="~/BookRegister.aspx">登録</asp:HyperLink>--%>
+        <asp:HyperLink ID="HyperLinkRegist" runat="server" NavigateUrl="~/BookRegister.aspx">登録</asp:HyperLink>
     </div>
 
     <form id="form1" runat="server">
@@ -42,13 +42,13 @@
                             <asp:BoundField DataField="PublicationDateString" HeaderText="Publication" ItemStyle-Width="80" SortExpression="PublicationDateString">
                             <ItemStyle Width="80px" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="ListPrice" DataFormatString="{0:#,##0}円" HeaderText="ListPrice" ItemStyle-Width="80">
+                            <asp:BoundField DataField="ListPrice" DataFormatString="{0:#,##0}円" HeaderText="ListPrice" ItemStyle-Width="80" SortExpression="ListPrice">
                             <ItemStyle Width="80px" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="Publisher" HeaderText="Publisher" ItemStyle-Width="100">
+                            <asp:BoundField DataField="Publisher" HeaderText="Publisher" ItemStyle-Width="100" SortExpression="Publisher">
                             <ItemStyle Width="100px" />
                             </asp:BoundField>
-                            <asp:BoundField DataField="Author" HeaderText="Author" ItemStyle-Width="150">
+                            <asp:BoundField DataField="Author" HeaderText="Author" ItemStyle-Width="150" SortExpression="Author">
                             <ItemStyle Width="150px" />
                             </asp:BoundField>
                             <asp:HyperLinkField DataTextField="TinyImageURL" 
