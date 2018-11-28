@@ -101,6 +101,10 @@ public partial class Books : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private System.DateTime _InsertDatetime;
 	
+	private bool _Disposal;
+	
+	private string _Location;
+	
     #region 拡張メソッドの定義
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -127,6 +131,10 @@ public partial class Books : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnTinyImageURLChanged();
     partial void OnInsertDatetimeChanging(System.DateTime value);
     partial void OnInsertDatetimeChanged();
+    partial void OnDisposalChanging(bool value);
+    partial void OnDisposalChanged();
+    partial void OnLocationChanging(string value);
+    partial void OnLocationChanged();
     #endregion
 	
 	public Books()
@@ -174,7 +182,7 @@ public partial class Books : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
 	public string Title
 	{
 		get
@@ -194,7 +202,7 @@ public partial class Books : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PublicationDateString", DbType="NVarChar(20)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PublicationDateString", DbType="NVarChar(50)")]
 	public string PublicationDateString
 	{
 		get
@@ -254,7 +262,7 @@ public partial class Books : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="NVarChar(100)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Author", DbType="NVarChar(200)")]
 	public string Author
 	{
 		get
@@ -350,6 +358,46 @@ public partial class Books : INotifyPropertyChanging, INotifyPropertyChanged
 				this._InsertDatetime = value;
 				this.SendPropertyChanged("InsertDatetime");
 				this.OnInsertDatetimeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Disposal", DbType="Bit NOT NULL")]
+	public bool Disposal
+	{
+		get
+		{
+			return this._Disposal;
+		}
+		set
+		{
+			if ((this._Disposal != value))
+			{
+				this.OnDisposalChanging(value);
+				this.SendPropertyChanging();
+				this._Disposal = value;
+				this.SendPropertyChanged("Disposal");
+				this.OnDisposalChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="NVarChar(50)")]
+	public string Location
+	{
+		get
+		{
+			return this._Location;
+		}
+		set
+		{
+			if ((this._Location != value))
+			{
+				this.OnLocationChanging(value);
+				this.SendPropertyChanging();
+				this._Location = value;
+				this.SendPropertyChanged("Location");
+				this.OnLocationChanged();
 			}
 		}
 	}

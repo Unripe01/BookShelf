@@ -111,8 +111,8 @@ public class PAAPI
             throw new HttpParseException("XMLノード解析：Item が存在しません。");
         }
         bookTag.DetailPageURL = items[0].SelectSingleNode("ns:DetailPageURL", xmlNsManager).InnerText;
-        bookTag.TinyImageURL = items[0].SelectSingleNode("ns:ImageSets/ns:ImageSet/ns:TinyImage/ns:URL", xmlNsManager).InnerText;
-        bookTag.MediumImageURL = items[0].SelectSingleNode("ns:ImageSets/ns:ImageSet/ns:MediumImage/ns:URL", xmlNsManager).InnerText;
+        bookTag.TinyImageURL = items[0].SelectSingleNode("ns:ImageSets/ns:ImageSet/ns:TinyImage/ns:URL", xmlNsManager) == null ? null : items[0].SelectSingleNode("ns:ImageSets/ns:ImageSet/ns:TinyImage/ns:URL", xmlNsManager).InnerText;
+        bookTag.MediumImageURL = items[0].SelectSingleNode("ns:ImageSets/ns:ImageSet/ns:MediumImage/ns:URL", xmlNsManager) == null ? null : items[0].SelectSingleNode("ns:ImageSets/ns:ImageSet/ns:MediumImage/ns:URL", xmlNsManager).InnerText;
         bookTag.InsertDatetime = DateTime.Now;
 
         return bookTag;

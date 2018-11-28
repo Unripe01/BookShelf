@@ -4,15 +4,17 @@
     <Type Name="Books">
       <Column Name="ISBN" Type="System.String" DbType="NVarChar(13) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="EAN" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
-      <Column Name="Title" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="PublicationDateString" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PublicationDateString" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ListPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Publisher" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="Author" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Author" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="DetailPageURL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="MediumImageURL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="TinyImageURL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="InsertDatetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Disposal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

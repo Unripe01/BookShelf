@@ -17,8 +17,9 @@ public partial class BookRegister : System.Web.UI.Page
             return;
         }
 
-        //DB登録
+        //DB登録用値取得
         var isbn = this.isbn.Text;
+        var location = this.Location.Text;
 
         PAAPI api = new PAAPI();
         string message;
@@ -34,6 +35,7 @@ public partial class BookRegister : System.Web.UI.Page
                 if (existsRecord == null)
                 {
                     status = "新規：";
+                    booktag.Location = location;
                     db.Books.InsertOnSubmit(booktag);
                 }
                 else
@@ -44,6 +46,7 @@ public partial class BookRegister : System.Web.UI.Page
                     existsRecord.MediumImageURL = booktag.MediumImageURL;
                     existsRecord.TinyImageURL = booktag.TinyImageURL;
                     existsRecord.DetailPageURL = booktag.DetailPageURL;
+                    existsRecord.Location = location;
                 }
                 db.SubmitChanges();
             }

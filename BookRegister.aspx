@@ -24,8 +24,10 @@
 
     <form id="form1" runat="server">
     <div>
-        <asp:Label ID="isbnLabel" runat="server" Text="isbn"></asp:Label>
+        <asp:Label ID="isbnLabel" runat="server" Text="ISBN"></asp:Label>
         <asp:TextBox ID="isbn" runat="server" type="tel" CssClass="disabled"></asp:TextBox>
+        <asp:Label ID="locationLabel" runat="server" Text="Location"></asp:Label>
+        <asp:TextBox ID="Location" runat="server" type="tel" CssClass="disabled"></asp:TextBox>
         <asp:Button ID="btnRegist" runat="server" Text="Regist" OnClick="btnRegist_Click" />
     </div>
     <div>
